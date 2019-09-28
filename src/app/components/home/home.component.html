@@ -1,0 +1,20 @@
+<h1>HOME PAGE</h1>
+
+
+<button *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)">prev</button> <br>
+<button *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">next</button> <br>
+
+<!-- <div [(ngModel)]="locationId" (ngModelChange)="onGetLocation()"> -->
+    <!-- <div [(ngModel)]="locationId"> -->
+        <div *ngFor="let location of locations | async">
+            <a class="" (click)="getLocation(location.id)">
+                nome {{location.name}}
+                <!-- ID {{location.id}} -->
+
+                
+            </a><br><br>
+            Characters {{location.residents}}<br><br>
+            
+        </div>
+    <!-- </div> -->
+<!-- </div> -->
