@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
+import { LocationComponent } from '../location/location.component';
 
 
 @Component({
@@ -34,13 +35,13 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         this.getPagesLocation();
+        LocationComponent
     }
 
     getPagesLocation(url = null) {
-        console.log("URL", url);
-        this.$locationCall = this.locationService.getPagesLocation(url);
+        this.$locationCall = this.locationService.getLocationsByPage(url);
         this.locations = this.$locationCall
-            .pipe(map(k => k.results));            
+            .pipe(map(k => k.results));       
 
         const ttt = this.$locationCall.pipe(
             map(k => k.info)
@@ -56,9 +57,9 @@ export class HomeComponent implements OnInit {
 
     getLocation(locationId:number) {
 
-        this.router.navigate(['/locations',locationId])
+        this.router.navigate(['/locations',locationId]);
 
-        // console.log
+
         // // var characterLocationId = value.substring(1, 4);
 
         // console.log("VALUEEEE 01 ", value[0]);

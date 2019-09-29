@@ -8,6 +8,7 @@ import { EpisodeComponent } from './components/episode/episode.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LocationComponent } from './components/location/location.component';
+import { CharacterComponent } from './components/character/character.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { LocationComponent } from './components/location/location.component';
     HomeComponent,
     EpisodeComponent,
     LocationComponent,
-    // CharacterComponent
+    CharacterComponent,
   ],
   imports: [
     BrowserModule,
