@@ -44,6 +44,15 @@ export class ApiService {
       ));
   }
 
+  public getCharacter(characterId): Observable<Character> {
+    return this.http.get<Character>(`${this.urlCharacter}/${characterId}`)
+    .pipe(
+      tap(
+        characters => console.log(`fetched characters`, characters),
+        error => console.log(`error -> ${error}`)
+      ));
+  }
+
   public getEpisodes(): Observable<any> {
     return this.http.get(`https://rickandmortyapi.com/api/episode`);
   }

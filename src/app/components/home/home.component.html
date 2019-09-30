@@ -1,20 +1,27 @@
 <h1>HOME PAGE</h1>
 
 
-<button *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)">prev</button> <br>
-<button *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">next</button> <br>
+<div class="mb-2 d-flex justify-content-around">
+    <button class="card" *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)"> <<== PREV</button>
+    <button class="card" *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">NEXT ==>></button>
+</div>
 
-<!-- <div [(ngModel)]="locationId" (ngModelChange)="onGetLocation()"> -->
-    <!-- <div [(ngModel)]="locationId"> -->
-        <div *ngFor="let location of locations | async">
-            <a class="" (click)="getLocation(location.id)">
-                nome {{location.name}}
-                <!-- ID {{location.id}} -->
-
-                
-            </a><br><br>
-            Characters {{location.residents}}<br><br>
-            
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 d-flex justify-content-center mb-5" *ngFor="let location of locations | async">
+            <div class="card shadow p-3 mb-5 bg-white" style="width: 22rem;" (click)="getLocation(location.id)">
+                <div class="card-body">
+                    <a class="" >
+                        <h5 class="d-flex justify-content-start">{{location.name}}</h5>
+                        <hr>
+                        <p>TYPE {{location.type}}</p>
+                        <p>DIMENSION {{location.dimension}}</p>
+                    </a>
+                </div>
+            </div>
         </div>
-    <!-- </div> -->
-<!-- </div> -->
+    </div>
+</div>
+
+
+

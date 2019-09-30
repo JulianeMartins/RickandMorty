@@ -1,0 +1,12 @@
+.character {
+    position: relative;
+    > .character-info {
+
+    }
+    > .character-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate3d(50px,-50px,0);
+    }
+}

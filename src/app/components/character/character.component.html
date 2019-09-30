@@ -1,1 +1,32 @@
-<p>character works!</p>
+<h1>PAGE CHARACTER</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 d-flex justify-content-center" *ngIf="$characterCall | async; let character">
+            <div class="col-sm-9 p-0 card shadow bg-white">
+                <div class="character card-body">
+                    <div class="character-info">
+                        <h5 class="card-title">NAME {{character.name}}</h5>
+                        <p class="card-text">STATUS {{character.status}}</p>
+                        <p class="card-text">SPECIES {{character.species}}</p>
+                        <p class="card-text">TYPE {{character.type}}</p>
+                        <p class="card-text">GENDER {{character.gender}}</p>
+                        <p class="card-text">ORIGIN {{character.origin.name}}</p>
+                        <p class="card-text">ORIGIN {{character.location.name}}</p>
+                    </div>
+                    <div class="character-image p-0">
+                        <img class="w-100 bg-white rounded" src="{{character.image}}" alt="">
+                    </div>
+                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                </div>
+            </div>
+        </div>  
+        <div class="mt-5 col-sm-12 d-flex justify-content-center" *ngIf="$characterCall | async; let character">
+            <div class="col-sm-9 p-0 card shadow bg-white">
+                <div class="card-body">
+                    <p class="card-text">EPISODES</p>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>

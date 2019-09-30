@@ -6,19 +6,56 @@
 <h1>TELA DE LOCATION</h1>
 
 <div *ngIf="$locationCall | async; let location">
-    <p>{{location.name}}</p>
+    <p>NOME DA LOCATION {{location.name}}</p>
 </div>
 
 <div *ngIf="$characters | async; let character">
     <div *ngIf="character.name; else other_content">
-        <p>{{character.name}}</p>
+        <div class="container">
+            <div class="row">
+                <div class="flex-column col-sm-2 p-1 d-flex align-items-center mb-5">
+                    <div class="" style="width: 5rem;">
+                        <div class="card-body p-0">
+                            <a class="" (click)="getcharacter(character.id)">
+                                <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <h6 class="d-flex text-center p-1">{{character.name}}</h6>
+                </div>
+            </div>
+        </div>
     </div>
+
+    
+
 
 
     <ng-template #other_content>
-        <div *ngFor="let character of $characters | async">
+
+        <!-- <div *ngFor="let character of $characters | async">
             <p>{{character.name}}</p>
+        </div> -->
+
+        <div class="container">
+            <div class="row">
+                <div class="flex-column col-sm-2 p-1 d-flex align-items-center mb-5" *ngFor="let character of $characters | async">
+                    <div class="" style="width: 5rem;">
+                        <div class="card-body p-0">
+                            <a class="" (click)="getCharacter(character.id)">
+                                <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <h6 class="d-flex text-center p-1">{{character.name}}</h6>
+                    
+                </div>
+            </div>
         </div>
+
+
     </ng-template>
 </div>
+
+    <!-- <app-character></app-character> -->
 

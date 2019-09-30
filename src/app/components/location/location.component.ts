@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Character } from 'src/app/models/character.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Location } from 'src/app/models/location.model';
+
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
@@ -23,7 +24,8 @@ export class LocationComponent implements OnInit {
   
   constructor(
     private route: ActivatedRoute,
-    private locationService: ApiService,) { }
+    private locationService: ApiService,
+    private router: Router) { }
 
   ngOnInit() {
     this.locationId = this.route.snapshot.paramMap.get("id");
@@ -58,4 +60,11 @@ export class LocationComponent implements OnInit {
     ? of([])
     : this.locationService.getCharacters(charactersId)
   }
+
+  getCharacter(characterId) {
+    console.log("CHARACTER", characterId);
+    this.router.navigate(['/characters',characterId]);
+
+  }
+
 }
