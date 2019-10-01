@@ -1,19 +1,19 @@
 <h1>PAGE CHARACTER</h1>
 <div class="container">
-        <div class="row">
-<div class="mb-2 col-sm-12 d-flex justify-content-center" *ngIf="$characterCall | async; let character">
-        <div class="col-sm-9">
-            <h1 class="">{{character.name}}</h1>
-        </div>
-    </div>  
+    <div class="row">
+        <div class="mb-2 col-sm-12 d-flex justify-content-center" *ngIf="$characterCall | async; let character">
+            <div class="col-sm-9">
+                <h1 class="">{{character.name}}</h1>
+            </div>
+        </div>  
     </div>
 </div>
 
+
+
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 d-flex justify-content-center" *ngIf="$characterCall | async; let character">
-                    <!-- <h5 class="">NAME {{character.name}}</h5> -->
-            
+        <div class="mb-5 col-sm-12 d-flex justify-content-center" *ngIf="$characterCall | async; let character">
             <div class="col-sm-9 p-0 card shadow bg-white">
                 <div class="character card-body">
                     <div class="character-info">
@@ -30,7 +30,8 @@
                 </div>
             </div>
         </div>  
-        <app-episode></app-episode>
-        
+
     </div>
 </div>
+<app-episode></app-episode>
+        

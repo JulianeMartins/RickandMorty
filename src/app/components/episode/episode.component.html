@@ -1,20 +1,40 @@
 
-<div *ngIf="$episodes | async; let episode">
-        <div *ngIf="episode.name; else other_content">
-                <h1>nome {{episode.name}}</h1>
-                <p>{{episode.air_date}}</p>
-<p>{{episode.episode}}</p>
-
+<div class="container">
+    <div class="row">
+        <div class="mt-5 col-sm-12 d-flex justify-content-center">
+            <div class="col-sm-9 p-0 card shadow bg-white">
+                <h1 class="">EPISODES</h1>
+                <div class="card-body" *ngIf="$episodes | async; let episode">
+                    <div *ngIf="episode.name; else other_content">
+                        <h1>nome {{episode.name}}</h1>
+                        <p>{{episode.air_date}}</p>
+                        <p>{{episode.episode}}</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
 </div>
+
+
+
 
 <ng-template #other_content>
-<div *ngFor="let episode of $episodes | async">
-        <hr>
-    <h1>name episode {{episode.name}}</h1>
-<p>date episode {{episode.air_date}}</p>
-<p>episode {{episode.episode}}</p>
-</div>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="mt-5 col-sm-12 d-flex justify-content-center">
+                <div class="col-sm-9 p-0 card shadow bg-white">
+                    <h1 class="">EPISODES</h1> -->
+                    <div class="card-body" *ngFor="let episode of $episodes | async">
+                        <hr>
+                        <h1>name episode {{episode.name}}</h1>
+                        <p>date episode {{episode.air_date}}</p>
+                        <p>episode {{episode.episode}}</p>
+                    </div>
+                <!-- </div>
+            </div>
+        </div>
+    </div> -->
 
 <!-- <div class="mt-5 col-sm-12 d-flex justify-content-center" *ngIf="$characterCall | async; let character">
     <div class="col-sm-9">
