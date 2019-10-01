@@ -8,6 +8,7 @@ import { map, filter } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import { LocationComponent } from '../location/location.component';
+import { COLORS } from 'src/app/constants';
 
 
 @Component({
@@ -88,6 +89,11 @@ export class HomeComponent implements OnInit {
         // var filesArray = this.locations.residents.split(',');
         
         
+    }
+
+    getColor(){
+        const n = Math.floor((Math.random() * COLORS.length) + 0);
+        return COLORS[n];  
     }
 
     ngOnDestroy() {}

@@ -6,6 +6,7 @@ import { LocationResponse } from '../models/locationResponse.model';
 import { Location } from '../models/location.model';
 import { Character } from '../models/character.model';
 import { tap } from 'rxjs/operators';
+import { Episode } from '../models/episode.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class ApiService {
   private urlBase = API_URL;
   private urlLocation = `${this.urlBase}location/`;
   private urlCharacter = `${this.urlBase}character/`;
+  private urlEpisode = `${this.urlBase}episode/`
 
   pageNumber: number = 1;
   i: number;
@@ -53,9 +55,14 @@ export class ApiService {
       ));
   }
 
-  public getEpisodes(): Observable<any> {
-    return this.http.get(`https://rickandmortyapi.com/api/episode`);
-  }
+  public getEpisodes(episodesId): Observable<Episode[]> {
+    return this.http.get<Episode[]>(`${this.urlEpisode}/${episodesId}`)
+    .pipe(
+      tap(
+        episodes => console.log(`fetched episodes`, episodes),
+        error => console.log(`error ->  ${error}`)
+      ));
+    }
 
   
 }

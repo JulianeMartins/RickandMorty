@@ -1,6 +1,6 @@
 import { Character } from './character.model';
 
-export class Episodes {
+export class Episode {
     public id:  number;
     public name: string;
     public air_date: string;

@@ -1,8 +1,3 @@
-<!-- <div *ngFor="let character of characters.results">
-    <p>nome {{character.name}}</p>
-    <p>tipo {{character.type}}</p>
-    <p>localizacao {{character.location.name}}</p>
-</div> -->
 <h1>TELA DE LOCATION</h1>
 
 <div *ngIf="$locationCall | async; let location">
@@ -27,33 +22,30 @@
         </div>
     </div>
 
-    
 
 
 
     <ng-template #other_content>
 
-        <!-- <div *ngFor="let character of $characters | async">
-            <p>{{character.name}}</p>
-        </div> -->
+
 
         <div class="container">
+
             <div class="row">
-                <div class="flex-column col-sm-2 p-1 d-flex align-items-center mb-5" *ngFor="let character of $characters | async">
-                    <div class="" style="width: 5rem;">
-                        <div class="card-body p-0">
-                            <a class="" (click)="getCharacter(character.id)">
-                                <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
-                            </a>
-                        </div>
+
+
+
+                <div class="flex-column col-sm-3 p-1 d-flex align-items-center mb-5" *ngFor="let character of $characters | async">
+                    <div class="card shadow p-3 mb-5 bg-white">
+                        <a class="card-body p-0" (click)="getCharacter(character.id)">
+                            <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
+                        </a>
+                        <h6 class="mt-2 text-center p-1">{{character.name}}</h6>
                     </div>
-                    <h6 class="d-flex text-center p-1">{{character.name}}</h6>
                     
                 </div>
             </div>
         </div>
-
-
     </ng-template>
 </div>
 

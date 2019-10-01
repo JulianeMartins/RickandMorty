@@ -1,5 +1,5 @@
 import { Location } from './location.model';
-import { Episodes } from './episode.model';
+import { Episode } from './episode.model';
 import { ObjectUrl } from './objectUrl.model';
 import { Type } from '@angular/core';
 
@@ -13,7 +13,7 @@ export interface Character {
     origin: ObjectUrl;
     location: ObjectUrl;
     image: string;
-    episode: Episodes;
+    episode: string[];
     url: string;
     created: string;
 }
