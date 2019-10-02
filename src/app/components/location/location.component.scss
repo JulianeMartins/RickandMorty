@@ -1,7 +1,9 @@
 .contentLocation {
     min-height: calc(100vh - 350px);
     .nameCharacter {
-        height: 41px;
+        font-family: 'montserratRegularItalic';
+        font-size: 1rem;
+        height: 42px;
         overflow: hidden;
     }
 }

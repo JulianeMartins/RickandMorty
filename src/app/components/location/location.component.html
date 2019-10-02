@@ -12,8 +12,8 @@
                 <div class="flex-column col-sm-3 p-1 d-flex align-items-center mb-5">
                     <a [routerLink]="" class="card shadow p-3 mb-5 bg-white" (click)="getCharacter(character.id)">
                         <div class="card-body p-0">
-                                <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
-                                <p class="mt-2 text-center p-1">{{character.name}}</p>
+                            <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
+                            <p class="mt-2 text-center p-1">{{character.name}}</p>
                         </div>
                     </a>
                 </div>
@@ -25,14 +25,11 @@
     <div class="container">
         <div class="row">
             <div class="flex-column col-sm-3 p-1 d-flex align-items-center mb-5" *ngFor="let character of $characters | async">
-
-
-
-                        <a [routerLink]="" class="card shadow p-3 mb-5 bg-white" (click)="getCharacter(character.id)">
-                                <div class="card-body p-0">
+                <a [routerLink]="" class="card shadow p-3 mb-5 bg-white" (click)="getCharacter(character.id)">
+                    <div class="card-body p-0">
                         <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
-                        <h6 class="mt-2 text-center p-1 nameCharacter">{{character.name}}</h6>
-                                </div>
+                        <h2 class="mt-2 mb-0 text-center p-1 nameCharacter">{{character.name}}</h2>
+                    </div>
                 </a>        
             </div>
         </div>
