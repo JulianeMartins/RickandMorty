@@ -2,7 +2,16 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import './app/components/character/character.component.scss';
 @import './app/components/home/home.component.scss';
+@import './assets/fonts/customfont.css';
 
 body{
     background: #fefbf5;
+}
+
+a {
+    color: #000;
+    &:hover{
+        text-decoration: none;
+        color: #000;
+    }
 }

@@ -1,27 +1,43 @@
-<h1>HOME PAGE</h1>
 
-
-<div class="mb-2 d-flex justify-content-around">
-    <button class="card" *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)"> <<== PREV</button>
-    <button class="card" *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">NEXT ==>></button>
-</div>
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-3 d-flex justify-content-center mb-5" *ngFor="let location of locations | async">
-            <div [ngStyle]="{'border-left-color': getColor()}" class="location-items card shadow p-3 mb-5 bg-white" style="width: 22rem;" (click)="getLocation(location.id)">
+        <div class="col-md-12 col-lg-3 d-flex justify-content-center mb-5" *ngFor="let location of locations | async">
+            <a [routerLink]="" [ngStyle]="{'border-left-color': getColor()}" class="location-items card shadow p-3 mb-5 bg-white" (click)="getLocation(location.id)">
+                    
                 <div class="card-body">
-                    <a class="" >
                         <h5 class="d-flex justify-content-start">{{location.name}}</h5>
                         <hr>
                         <p>TYPE {{location.type}}</p>
                         <p>DIMENSION {{location.dimension}}</p>
-                    </a>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
 
+<!-- <div class="m-3 d-flex justify-content-around"> -->
+    <!-- <button class="card" *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)"> <<== PREV</button> -->
+    <!-- <button class="card" *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">NEXT ==>></button> -->
+<!-- </div> -->
 
+
+<nav aria-label="">
+    <div class="pagination m-3 d-flex justify-content-around">
+          <div class="page-item">
+            <button class="page-link" *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)">
+              <span aria-hidden="true">
+                <!-- <img src="assets/img/morty.png" alt="">   -->
+                Prev
+                <!-- &laquo; -->
+            </span>
+            </button>
+        </div>
+        <div class="page-item">
+            <button class="page-link" *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">
+                <span aria-hidden="true">Next &raquo;</span>
+            </button>
+        </div>
+    </div>
+</nav>
 
