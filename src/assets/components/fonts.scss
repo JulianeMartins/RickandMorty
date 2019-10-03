@@ -1,0 +1,23 @@
+.fonts{
+    font-family: 'montserratRegularItalic', serif;
+    &.font-montserrat {
+        font-family: 'montserratRegularItalic', serif;
+    }
+    &.font-lato-regular {
+        font-family: 'latoRegularItalic', serif;
+    }&.font-lato {
+        font-family: 'latoLightItalic', serif;
+    }
+    &.font-size-1 {
+        font-size: 0.7rem;
+    }
+    &.font-size-2 {
+        font-size: 0.9rem;
+    }
+    &.font-size-3 {
+        font-size: 1rem;
+    }
+    &.font-size-4 {
+        font-size: 1.30rem;
+    }
+}

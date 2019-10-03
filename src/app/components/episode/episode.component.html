@@ -1,16 +1,16 @@
-<div class="episode">
+<div class="episode fonts">
     <div class="container">
         <div class="row">
             <div class="mt-4 mb-5 col-sm-12 d-flex justify-content-center">
                 <div class="col-sm-9 p-0 card bg-white">
                     <div class="pt-4 ml-4">
-                        <h2 class="episode-font-tittle">EPISODES</h2>
+                        <h2 class="fonts font-lato">EPISODES</h2>
                     </div>
                     <div class="card-body pt-0" *ngIf="$episodes | async; let episode">
                         <div *ngIf="episode.name; else other_content">
                             <hr class="mr-5 ml-5">
                             <div class="episode-data">
-                                <h3 class="episode-size-font">{{episode.name}}</h3>
+                                <h3 class="fonts font-size-4">{{episode.name}}</h3>
                                 <div class="d-flex flex-row">
                                     <p class="mr-2 mb-1">Episode </p>
                                     <p class="text-muted mb-1">{{episode.episode}}</p>
@@ -39,7 +39,7 @@
                         <div class="card-body p-0" *ngFor="let episode of $episodes | async">
                             <hr class="mr-5 ml-5">
                             <div class="episode-data">
-                                <h3 class="episode-size-font">{{episode.name}}</h3>
+                                <h3 class="fonts font-size-4">{{episode.name}}</h3>
                                 <div class="d-flex flex-row">
                                     <p class="mr-2 mb-1">Episode </p>
                                     <p class="text-muted mb-1">{{episode.episode}}</p>

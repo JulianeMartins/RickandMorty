@@ -2,20 +2,20 @@
 <div class="container">
     <div class="row">
         <div class="flex-column col-md-12 col-lg-3 d-flex justify-content-center" *ngFor="let location of locations | async">
-            <a [routerLink]="" [ngStyle]="{'border-left-color': getColor()}" class="location-items card has-hover p-3 mb-5 bg-white" (click)="getLocation(location.id)">
+            <a [routerLink]="" [ngStyle]="{'border-left-color': getColor()}" class="fonts location-items card has-hover p-3 mb-5 bg-white" (click)="getLocation(location.id)">
                     
                 <div class="card-body">
-                        <h5 class="d-flex justify-content-start location-text-tittle">{{location.name}}</h5>
+                        <h5 class="d-flex justify-content-start fonts font-lato">{{location.name}}</h5>
                         <hr>
 
                         <div class="">
-                            <p class="text-muted m-0 location-text-status">TYPE</p>
-                            <p class="location-text-data">{{location.type}}</p>
+                            <p class="text-muted m-0 fonts font-lato-regular font-size-1">TYPE</p>
+                            <p class="fonts font-size-2">{{location.type}}</p>
                         </div>
 
                         <div class="">
-                            <p class="text-muted m-0 location-text-status">DIMENSION</p>
-                            <p class="location-text-data mb-0">{{location.dimension}}</p>
+                            <p class="text-muted m-0 fonts font-lato-regular font-size-1">DIMENSION</p>
+                            <p class="fonts font-size-2 mb-0">{{location.dimension}}</p>
                         </div>
                 </div>
             </a>

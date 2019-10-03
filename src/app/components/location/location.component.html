@@ -1,7 +1,7 @@
 <div *ngIf="$locationCall | async; let location">
         <app-page-title customTitle="{{location.name}}"> </app-page-title>
 </div>
-<div class="contentLocation">
+<div class="content-location">
     
 
 <div *ngIf="$characters | async; let character">
@@ -24,10 +24,10 @@
     <div class="container">
         <div class="row">
             <div class="flex-column col-sm-3 p-1 d-flex align-items-center mb-5" *ngFor="let character of $characters | async">
-                <a [routerLink]="" class="card has-hover p-3 mb-5 bg-white" (click)="getCharacter(character.id)">
+                <a [routerLink]="" class="card has-hover p-3 bg-white" (click)="getCharacter(character.id)">
                     <div class="card-body p-0">
                         <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
-                        <h2 class="mt-2 mb-0 text-center p-1 nameCharacter">{{character.name}}</h2>
+                        <h2 class="mt-2 mb-0 text-center p-1 fonts font-size-3 name-character">{{character.name}}</h2>
                     </div>
                 </a>        
             </div>
