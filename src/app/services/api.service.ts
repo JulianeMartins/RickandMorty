@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../constants';
 import { LocationResponse } from '../models/locationResponse.model';
@@ -18,7 +18,6 @@ export class ApiService {
   private urlEpisode = `${this.urlBase}episode/`
 
   pageNumber: number = 1;
-  i: number;
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +25,6 @@ export class ApiService {
     let firstUrl = this.urlLocation;
     return this.http.get<LocationResponse>(url || firstUrl);
   }
-
 
   public getLocation(locationId): Observable<Location> {
     return this.http.get<Location>(`${this.urlLocation}/${locationId}`)
@@ -63,6 +61,4 @@ export class ApiService {
         error => console.log(`error ->  ${error}`)
       ));
     }
-
-  
 }

@@ -54,7 +54,6 @@ export class LocationComponent implements OnInit {
     return arrayUrlCharacter.map(urlCharacter => this.getIds(urlCharacter));
   }
 
-
   getCharactersLocation(charactersId: number[]) {
     this.$characters = !charactersId.length
     ? of([])
@@ -62,9 +61,6 @@ export class LocationComponent implements OnInit {
   }
 
   getCharacter(characterId) {
-    console.log("CHARACTER", characterId);
     this.router.navigate(['/characters',characterId]);
-
   }
-
 }

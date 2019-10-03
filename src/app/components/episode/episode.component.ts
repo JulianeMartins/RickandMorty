@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './episode.component.html',
   styleUrls: ['./episode.component.scss']
 })
+
 export class EpisodeComponent implements OnInit {
   erro: any;
   characterId: string;
@@ -28,7 +29,6 @@ export class EpisodeComponent implements OnInit {
 
   private getEpisodeInfo() {
     this.$characterCall = this.episodeService.getCharacter(this.characterId);
-    
     const $episodesId = this.$characterCall.pipe(
       map(character => character.episode),
       map(arrayUrlEpisode => this.getArrayOfIds(arrayUrlEpisode))
@@ -53,5 +53,4 @@ export class EpisodeComponent implements OnInit {
     ? of([])
     : this.episodeService.getEpisodes(episodesId)
   }
-
 }

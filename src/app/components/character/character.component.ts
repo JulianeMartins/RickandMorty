@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Character } from 'src/app/models/character.model';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-character',
@@ -27,15 +26,5 @@ export class CharacterComponent implements OnInit {
 
   getCharacter() {
     this.$characterCall = this.characterService.getCharacter(this.characterId);
-  //   const character = this.$characterCall
-  // .subscribe(
-  //     (data: Character) => {
-  //         this.characterInfo = data;
-  //     }, (error: any) => {
-  //         this.erro = error;
-  //     }
-  // );
-  //   console.log("CHARACTER",character);
-
   }
 }

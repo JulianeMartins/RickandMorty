@@ -1,14 +1,14 @@
 @font-face {
-    font-family: montserratRegularItalic;
-    src: url("./MontserratRegularItalic.ttf") format("truetype");
+  font-family: montserratRegularItalic;
+  src: url("./MontserratRegularItalic.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: latoRegularItalic;
-    src: url("./LatoRegularItalic.ttf") format("truetype");
+  font-family: latoRegularItalic;
+  src: url("./LatoRegularItalic.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: latoLightItalic;
-    src: url("./LatoLightItalic.ttf") format("truetype");
+  font-family: latoLightItalic;
+  src: url("./LatoLightItalic.ttf") format("truetype");
 }

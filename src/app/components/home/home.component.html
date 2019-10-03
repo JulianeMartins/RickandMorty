@@ -1,46 +1,35 @@
 <app-page-title customTitle="Locations"> </app-page-title>
 <div class="container">
-    <div class="row">
-        <div class="flex-column col-md-12 col-lg-3 d-flex justify-content-center" *ngFor="let location of locations | async">
-            <a [routerLink]="" [ngStyle]="{'border-left-color': getColor()}" class="fonts location-items card has-hover p-3 mb-5 bg-white" (click)="getLocation(location.id)">
-                    
-                <div class="card-body">
-                        <h5 class="d-flex justify-content-start fonts font-lato">{{location.name}}</h5>
-                        <hr>
-
-                        <div class="">
-                            <p class="text-muted m-0 fonts font-lato-regular font-size-1">TYPE</p>
-                            <p class="fonts font-size-2">{{location.type}}</p>
-                        </div>
-
-                        <div class="">
-                            <p class="text-muted m-0 fonts font-lato-regular font-size-1">DIMENSION</p>
-                            <p class="fonts font-size-2 mb-0">{{location.dimension}}</p>
-                        </div>
-                </div>
-            </a>
+  <div class="row">
+    <div class="flex-column col-md-12 col-lg-3 d-flex justify-content-center" *ngFor="let location of locations | async">
+      <a [routerLink]="" [ngStyle]="{'border-left-color': getColor()}" class="fonts location-items card has-hover p-3 mb-5 bg-white" (click)="getLocation(location.id)">
+        <div class="card-body">
+          <h5 class="d-flex justify-content-start fonts font-lato">{{location.name}}</h5>
+          <hr>
+          <div>
+            <p class="text-muted m-0 fonts font-lato-regular font-size-1">TYPE</p>
+            <p class="fonts font-size-2">{{location.type}}</p>
+          </div>
+          <div>
+            <p class="text-muted m-0 fonts font-lato-regular font-size-1">DIMENSION</p>
+            <p class="fonts font-size-2 mb-0">{{location.dimension}}</p>
+          </div>
         </div>
+      </a>
     </div>
+  </div>
 </div>
-
-<!-- <div class="m-3 d-flex justify-content-around"> -->
-    <!-- <button class="card" *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)"> <<== PREV</button> -->
-    <!-- <button class="card" *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">NEXT ==>></button> -->
-<!-- </div> -->
-
-
 <nav class="d-flex justify-content-center">
-    <div class="col-sm-9 pagination m-3 d-flex justify-content-between">
-          <div class="page-item">
-            <button class="page-link paginate" *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)">
-                    <img class="icon icon-previous" src="assets/img/arrow.png" alt="">
-            </button>
-        </div>
-        <div class="page-item">
-            <button class="page-link paginate" *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">
-                <img class="icon" src="assets/img/arrow.png" alt="">
-            </button>
-        </div>
+  <div class="col-sm-9 pagination m-3 d-flex justify-content-between">
+    <div class="page-item">
+      <button class="page-link paginate" *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)">
+        <img class="icon icon-previous" src="assets/img/arrow.png" alt="">
+      </button>
     </div>
+    <div class="page-item">
+      <button class="page-link paginate" *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">
+        <img class="icon" src="assets/img/arrow.png" alt="">
+      </button>
+    </div>
+  </div>
 </nav>
-

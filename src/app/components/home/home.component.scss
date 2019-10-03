@@ -1,18 +1,17 @@
 .location-items {
-    border-left: 10px solid;
-    height: 260px;
-    overflow: hidden;
+  border-left: 10px solid;
+  height: 260px;
+  overflow: hidden;
 }
 
 .paginate {
+  border: none;
+  background: none;
+  .icon {
+    width: 50px;
     border: none;
-    background: none;
-    .icon {
-        width: 50px;
-        border: none;
-    }
-    .icon-previous {
-        transform: scaleX(-1);
-    }
+  }
+  .icon-previous {
+    transform: scaleX(-1);
+  }
 }
-        

@@ -1,16 +1,15 @@
 .character {
-    position: relative;
-    > .character-image {
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate3d(90px,-65px,0);
-        img{
-            width: 95%;
-            border-radius: 10px;
-            border: 5px solid white;
-            box-shadow: 2px -2px 20px 1px #a6a6a6;
-
-        }
+  position: relative;
+  > .character-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate3d(90px,-65px,0);
+    img{
+      width: 95%;
+      border-radius: 10px;
+      border: 5px solid white;
+      box-shadow: 2px -2px 20px 1px #a6a6a6;
     }
+  }
 }
