@@ -11,6 +11,7 @@ import { LocationComponent } from './components/location/location.component';
 import { CharacterComponent } from './components/character/character.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { PageTitleComponent } from './components/page-title/page-title.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HeaderComponent } from './components/header/header.component';
     CharacterComponent,
     FooterComponent,
     HeaderComponent,
+    PageTitleComponent,
   ],
   imports: [
     BrowserModule,

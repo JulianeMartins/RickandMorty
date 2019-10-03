@@ -1,6 +1,5 @@
 import { Location } from './location.model';
 import { Episode } from './episode.model';
-import { ObjectUrl } from './objectUrl.model';
 import { Type } from '@angular/core';
 
 export interface Character {
@@ -10,8 +9,8 @@ export interface Character {
     species: string;
     type: string;
     gender: string;
-    origin: ObjectUrl;
-    location: ObjectUrl;
+    // origin: string;
+    // location: string;
     image: string;
     episode: string[];
     url: string;

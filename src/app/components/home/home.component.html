@@ -1,15 +1,22 @@
-
-
+<app-page-title customTitle="Locations"> </app-page-title>
 <div class="container">
     <div class="row">
-        <div class="col-md-12 col-lg-3 d-flex justify-content-center mb-5" *ngFor="let location of locations | async">
-            <a [routerLink]="" [ngStyle]="{'border-left-color': getColor()}" class="location-items card shadow p-3 mb-5 bg-white" (click)="getLocation(location.id)">
+        <div class="flex-column col-md-12 col-lg-3 d-flex justify-content-center" *ngFor="let location of locations | async">
+            <a [routerLink]="" [ngStyle]="{'border-left-color': getColor()}" class="location-items card has-hover p-3 mb-5 bg-white" (click)="getLocation(location.id)">
                     
                 <div class="card-body">
-                        <h5 class="d-flex justify-content-start">{{location.name}}</h5>
+                        <h5 class="d-flex justify-content-start location-text-tittle">{{location.name}}</h5>
                         <hr>
-                        <p>TYPE {{location.type}}</p>
-                        <p>DIMENSION {{location.dimension}}</p>
+
+                        <div class="">
+                            <p class="text-muted m-0 location-text-status">TYPE</p>
+                            <p class="location-text-data">{{location.type}}</p>
+                        </div>
+
+                        <div class="">
+                            <p class="text-muted m-0 location-text-status">DIMENSION</p>
+                            <p class="location-text-data mb-0">{{location.dimension}}</p>
+                        </div>
                 </div>
             </a>
         </div>
@@ -22,20 +29,16 @@
 <!-- </div> -->
 
 
-<nav aria-label="">
-    <div class="pagination m-3 d-flex justify-content-around">
+<nav class="d-flex justify-content-center">
+    <div class="col-sm-9 pagination m-3 d-flex justify-content-between">
           <div class="page-item">
-            <button class="page-link" *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)">
-              <span aria-hidden="true">
-                <!-- <img src="assets/img/morty.png" alt="">   -->
-                Prev
-                <!-- &laquo; -->
-            </span>
+            <button class="page-link paginate" *ngIf="paginationInfo" [disabled]="!paginationInfo.prev"(click)="getPagesLocation(paginationInfo.prev)">
+                    <img class="icon icon-previous" src="assets/img/arrow.png" alt="">
             </button>
         </div>
         <div class="page-item">
-            <button class="page-link" *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">
-                <span aria-hidden="true">Next &raquo;</span>
+            <button class="page-link paginate" *ngIf="paginationInfo" [disabled]="!paginationInfo.next"(click)="getPagesLocation(paginationInfo.next)">
+                <img class="icon" src="assets/img/arrow.png" alt="">
             </button>
         </div>
     </div>

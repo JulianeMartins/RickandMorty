@@ -1,16 +1,15 @@
-<div class="contentLocation">
-<h1>TELA DE LOCATION</h1>
-
 <div *ngIf="$locationCall | async; let location">
-    <p>NOME DA LOCATION {{location.name}}</p>
+        <app-page-title customTitle="{{location.name}}"> </app-page-title>
 </div>
+<div class="contentLocation">
+    
 
 <div *ngIf="$characters | async; let character">
     <div *ngIf="character.name; else other_content">
         <div class="container">
             <div class="row">
                 <div class="flex-column col-sm-3 p-1 d-flex align-items-center mb-5">
-                    <a [routerLink]="" class="card shadow p-3 mb-5 bg-white" (click)="getCharacter(character.id)">
+                    <a [routerLink]="" class="card has-hover p-3 mb-5 bg-white" (click)="getCharacter(character.id)">
                         <div class="card-body p-0">
                             <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
                             <p class="mt-2 text-center p-1">{{character.name}}</p>
@@ -25,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="flex-column col-sm-3 p-1 d-flex align-items-center mb-5" *ngFor="let character of $characters | async">
-                <a [routerLink]="" class="card shadow p-3 mb-5 bg-white" (click)="getCharacter(character.id)">
+                <a [routerLink]="" class="card has-hover p-3 mb-5 bg-white" (click)="getCharacter(character.id)">
                     <div class="card-body p-0">
                         <img class="w-100 shadow-lg bg-white rounded" src="{{character.image}}" alt="">
                         <h2 class="mt-2 mb-0 text-center p-1 nameCharacter">{{character.name}}</h2>

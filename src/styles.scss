@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'node_modules/bootstrap/scss/bootstrap';
-@import './app/components/character/character.component.scss';
-@import './app/components/home/home.component.scss';
 @import './assets/fonts/customfont.css';
+@import './assets/components/card.scss';
+
 
 body{
     background: #fefbf5;
